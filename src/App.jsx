@@ -1,8 +1,24 @@
+import { useState } from "react"
+import PageViewer from "./components/PageViewer"
+
 export default function App(){
+
+    const [pageNumber,setPageNumber] = useState(1);
+    
+    function nextPage(){
+        if(pageNumber < 5)
+            setPageNumber(pageNumber + 1);
+    }
+    function previousPage(){
+        if(pageNumber > 1)
+            setPageNumber(pageNumber - 1);
+    }
+
     return(
         <>
-            <h1 className="heading">Personal info</h1>
-            <h2 className="subtitle">Please provide your name, email address and phone number.</h2>
+            <PageViewer pageNumber={pageNumber} />
+            <button onClick={previousPage}>previous</button>
+            <button onClick={nextPage}>next</button>
         </>
     )
 }

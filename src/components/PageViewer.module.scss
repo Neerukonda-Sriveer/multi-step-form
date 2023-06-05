@@ -1,0 +1,30 @@
+.page-viewer{
+    position: relative;
+    width: 48rem; //2.25 times roughly of the page selector
+    height: 34.8rem; //roughly half of total width
+}
+
+:root{
+    --page-transition-speed: .3s;
+}
+
+.page{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: opacity var(--page-transition-speed) ease-in-out;
+    
+    color: red;
+}
+
+.hidden{
+    opacity: 0;
+}
+
+.visible{
+    transition-delay: var(--page-transition-speed);
+    opacity: 1;
+}
