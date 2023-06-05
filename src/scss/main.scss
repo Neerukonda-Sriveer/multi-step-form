@@ -1,3 +1,15 @@
+@import './abstract';
 @import './reset';
+@import './misc-variables';
 @import './color';
+@import './spacing';
 @import './typography';
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    background-color: var(--color-blue-100);
+}

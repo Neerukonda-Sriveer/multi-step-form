@@ -1,0 +1,10 @@
+.app-container{
+    padding: var(--spacing-3);
+    border-radius: var(--border-radius);
+
+    width: 80rem;
+    height: 50rem;
+
+    background-color: var(--color-neutral-100);
+    display: flex;
+}

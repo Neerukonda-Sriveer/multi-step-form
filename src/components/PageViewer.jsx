@@ -9,9 +9,6 @@ import ThankYou from './pages/ThankYou'; //page 5
 export default function PageViewer({
     pageNumber
 }){
-
-    console.log(pageNumber);
-
     return(
         <div className={`${Classes['page-viewer']}`}>
             <PersonalInfo   className={`${Classes['page']} ${(pageNumber===1)?Classes['visible']:Classes['hidden']}`} />
