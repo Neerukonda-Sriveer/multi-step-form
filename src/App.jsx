@@ -1,5 +1,6 @@
 import { useState } from "react"
 import PageViewer from "./components/PageViewer"
+import PageSelector from "./components/PageSelector";
 
 export default function App(){
 
@@ -16,6 +17,7 @@ export default function App(){
 
     return(
         <>
+            <PageSelector pageNumber={pageNumber} setPageNumber={setPageNumber}/>
             <PageViewer pageNumber={pageNumber} />
             <button onClick={previousPage}>previous</button>
             <button onClick={nextPage}>next</button>
