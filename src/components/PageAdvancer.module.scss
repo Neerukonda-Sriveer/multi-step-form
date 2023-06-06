@@ -1,0 +1,24 @@
+@import '../scss/abstract';
+
+// @include for-mobile{
+//     .page-advancer{
+//         position: absolute;
+//         bottom: 0;
+
+//         width: 100%;
+//         height: 8rem;
+
+//         border: 1px solid red;
+//     }
+// }
+
+.page-advancer{
+    height: 8rem;
+    border: 1px solid red;
+
+    @include for-mobile{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
