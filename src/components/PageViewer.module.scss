@@ -3,15 +3,9 @@
 .page-viewer{
     flex: 1 1 100%;
     position: relative;
-    width: 48rem; //2.25 times roughly of the page selector
-    //height: 34.8rem; //roughly half of total width
-
+    width: 48rem;
     @include for-mobile{
-        position: absolute;
-        width: 100%;
-        height: 100%;
-
-        z-index: -1;
+        width: 0;
     }
 }
 
@@ -26,9 +20,10 @@
     transition: opacity var(--page-transition-speed) ease-in-out;
 
     @include for-mobile{
+        position: fixed;
         left: 50%;
-        top: 37%;
-        transform: translate(-50%, -50%);
+        top: 16%;
+        transform: translateX(-50%);
         
         width: min(35rem,90%);
         height: auto;
@@ -41,9 +36,11 @@
 
 .hidden{
     opacity: 0;
+    z-index: 1;
 }
 
 .visible{
     transition-delay: var(--page-transition-speed);
     opacity: 1;
+    z-index: 2;
 }
