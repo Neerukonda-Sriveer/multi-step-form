@@ -1,12 +1,24 @@
 @import '../scss/abstract';
 
+.page-advancer-wrapper{
+    @include for-mobile{
+        position: fixed;
+        bottom: 0;
+
+        width: 100%;
+        background-color: var(--color-neutral-100);
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
 .page-advancer{
     height: 8rem;
-    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
     @include for-mobile{
-        position: absolute;
-        bottom: 0;
-        width: 100%;
+        width: min(35rem, 90%);
+        margin: auto;
     }
 }

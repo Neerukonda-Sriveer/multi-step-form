@@ -1,4 +1,5 @@
 import Classes from './PageAdvancer.module.scss';
+import Button from './ui/Button';
 
 export default function PageAdvancer({
     pageNumber,
@@ -32,9 +33,15 @@ export default function PageAdvancer({
     }
 
     return(
-        <div className={`${Classes['page-advancer']}`}>
-            <button hidden={hidePreviousButton()} onClick={toPreviousPage}>Go Back</button>
-            <button hidden={hideNextButton()} onClick={toNextPage}>{nextText}</button>
+        <div hidden={hidePreviousButton() && hideNextButton()} className={`${Classes['page-advancer-wrapper']}`}>
+            <div className={`${Classes['page-advancer']}`}>
+                <div>
+                    <Button className='ghost cursor-link' hidden={hidePreviousButton()} onClick={toPreviousPage}>Go Back</Button>
+                </div>
+                <div>
+                    <Button className='primary cursor-link w-12-fix' hidden={hideNextButton()} onClick={toNextPage}>{nextText}</Button>
+                </div>
+            </div>
         </div>
     );
 }

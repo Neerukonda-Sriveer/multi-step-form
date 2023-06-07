@@ -15,6 +15,10 @@
 
         background-color: var(--color-neutral-100);
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+        --input-centering-space: 8rem;
+        column-gap: var(--input-centering-space);
+        padding-right: var(--input-centering-space);
     }
 }
 

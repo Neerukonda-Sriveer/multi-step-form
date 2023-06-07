@@ -1,0 +1,34 @@
+.button{
+    background-color: transparent;
+    border: none;
+    font-size: 1.6rem;
+    font-weight: 700;   
+}
+
+.ghost{
+    color: var(--color-neutral-500);
+}
+
+.primary{
+    transition: color ease-in-out var(--page-transition-speed),
+                background-color ease-in-out var(--page-transition-speed),
+                transform ease-in-out var(--page-transition-speed);
+
+    color: var(--color-neutral-400);
+    border-radius: var(--border-radius);
+    background-color: var(--color-blue-400);
+    padding: var(--spacing-3) var(--spacing-4);
+}
+
+.primary:hover{
+    color: var(--color-neutral-100);
+    background-color: var(--color-blue-300);
+}
+
+.cursor-link{
+    cursor: pointer;
+}
+
+.w-12-fix{
+    width: 12.5rem;
+}
