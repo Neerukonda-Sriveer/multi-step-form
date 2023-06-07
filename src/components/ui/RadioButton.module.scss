@@ -1,0 +1,57 @@
+@import '../../scss/abstract';
+@import '../../scss/typography';
+
+.label{
+    color: var(--color-neutral-100);
+    display: flex;
+    align-items: center;
+    column-gap: var(--spacing-2);
+
+    cursor: pointer;
+}
+
+.input{
+    display: none;
+}
+
+.step-number{
+    transition: all var(--page-transition-speed) ease-in-out;
+
+    display: inline-block;
+    padding: var(--spacing-1) var(--spacing-3);
+    border-radius: 100%;
+    border: 1px solid var(--color-neutral-100);
+
+    @extend .font-height-larger;
+}
+
+.input:checked + .step-number{
+    color: var(--color-blue-400);
+    background-color: var(--color-blue-200);
+    border: 1px solid var(--color-blue-200);
+}
+
+.desktop-labels{
+    display: flex;
+    flex-direction: column;
+    row-gap: .2rem;
+
+    @include for-mobile{
+        display: none;
+    }
+}
+
+.step-number-label{
+    color: var(--color-neutral-400);
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.4rem;
+    letter-spacing: -.05rem;
+}
+
+.step-name{
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+}

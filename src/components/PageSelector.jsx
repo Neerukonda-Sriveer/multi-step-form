@@ -1,4 +1,5 @@
 import Classes from './PageSelector.module.scss';
+import RadioButton from './ui/RadioButton';
 
 export default function PageSelector({
     pageNumber,
@@ -11,17 +12,34 @@ export default function PageSelector({
 
     return(
         <div className={`${Classes['page-selector']}`}>
-            <input onChange={() => setPage(1)} checked={pageNumber === 1} type="radio" id="PersonalInfo" name="Pages" value="1" />
-            <label htmlFor="PersonalInfo">Page 1</label><br />
-            
-            <input onChange={() => setPage(2)} checked={pageNumber === 2} type="radio" id="PlanSelector" name="Pages" value="2" />
-            <label htmlFor="PlanSelector">Page 2</label><br />
-            
-            <input onChange={() => setPage(3)} checked={pageNumber === 3} type="radio" id="PickAddOns" name="Pages" value="3" />
-            <label htmlFor="PickAddOns">Page 3</label><br/>
-
-            <input onChange={() => setPage(4)} checked={pageNumber===4 || pageNumber === 5} type="radio" id="FinishingUp" name="Pages" value="4" />
-            <label htmlFor="FinishingUp">Page 4</label>
+            <RadioButton 
+                onChange={() => setPage(1)} 
+                checked={pageNumber === 1} 
+                buttonPageNumber={1} 
+                pageNumber={pageNumber}
+                name="Pages" value="1"
+            />
+            <RadioButton 
+                onChange={() => setPage(2)} 
+                checked={pageNumber === 2} 
+                buttonPageNumber={2} 
+                pageNumber={pageNumber}
+                name="Pages" value="2"
+            />
+            <RadioButton 
+                onChange={() => setPage(3)} 
+                checked={pageNumber === 3} 
+                buttonPageNumber={3} 
+                pageNumber={pageNumber}
+                name="Pages" value="3"
+            />
+            <RadioButton 
+                onChange={() => setPage(4)} 
+                checked={pageNumber===4 || pageNumber === 5} 
+                buttonPageNumber={4} 
+                pageNumber={pageNumber}
+                name="Pages" value="4"
+            />
         </div>
     );
 }
