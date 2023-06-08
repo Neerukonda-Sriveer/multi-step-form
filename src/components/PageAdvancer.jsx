@@ -3,11 +3,13 @@ import Button from './ui/Button';
 
 export default function PageAdvancer({
     pageNumber,
-    setPageNumber
+    setPageNumber,
+    pageViewerRef
 }){
 
     function toNextPage(){
         //no checks are being performed as this function should not be called if the operation cannot be performed..
+        pageViewerRef.current.validateCurrentPage();
         setPageNumber(pageNumber+1);
     }
 
