@@ -1,0 +1,63 @@
+.switch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: var(--spacing-4);
+    padding: var(--spacing-3);
+    background-color: var(--color-neutral-300);
+}
+.input{
+    display: none;
+}
+
+.label{
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+.label-one{
+    color: var(--color-blue-400);
+}
+.label-two{
+    color: var(--color-neutral-500);
+}
+.input:checked ~ .label-one{
+    color: var(--color-neutral-500);
+}
+.input:checked ~ .label-two{
+    color: var(--color-blue-400);
+}
+
+.switch-outer-oval{
+
+    --outer-width: 5rem;
+    --distance-from-edge: .5rem;
+    --pug-width: 1.6rem;
+
+    position: relative;
+    width: 5rem;
+    height: 2.2rem;
+
+    border-radius: var(--border-radius);
+    background-color: var(--color-blue-400);
+}
+.switch-pug{
+    transition: all ease-in-out var(--page-transition-speed);
+
+    position: absolute;
+    width: var(--pug-width);
+    aspect-ratio: 1/1; //the pug is expected to be a circle
+
+    top: 0;
+    bottom: 0;
+    left: var(--distance-from-edge);
+    right: calc(var(--outer-width) - (var(--distance-from-edge) + var(--pug-width)));
+    margin: auto 0;
+
+    border-radius: 50%;
+    background-color: var(--color-neutral-100);
+}
+
+.input:checked ~ .switch-outer-oval .switch-pug{
+    left: calc(var(--outer-width) - (var(--distance-from-edge) + var(--pug-width)));
+    right: var(--distance-from-edge);
+}
