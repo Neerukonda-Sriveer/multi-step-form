@@ -1,0 +1,48 @@
+:root{
+    --input-font-size-small: 1.6rem;
+    --input-font-size-large: 1.8rem
+}
+
+.label{
+    display: flex;
+    flex-direction: column;
+}
+.label.in-error-state{
+    .input{
+        border: 1px solid var(--color-red-100);
+        outline: 1px solid var(--color-red-100);
+    }
+}
+
+.text-container{
+    display: flex;
+    justify-content: space-between;
+}
+.label-text{
+    font-size: var(--input-font-size-small);
+    font-weight: 400;
+    color: var(--color-blue-400);
+}
+.error-text{
+    display: none;
+    font-size: var(--input-font-size-large);
+    font-weight: 700;
+    color: var(--color-red-100);
+}
+
+.label.in-error-state .error-text{
+    display: block;
+}
+
+.input{
+    display: block;
+    font-size: var(--input-font-size-large);
+    padding: var(--spacing-2);
+    border-radius: var(--border-radius);
+
+    border: 1px solid var(--color-neutral-500);
+}
+
+.input:focus{
+    outline: 1px solid var(--color-blue-300);
+}

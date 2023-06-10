@@ -1,17 +1,11 @@
-.heading{
-    font-size: 3.6rem;
-    line-height: 4rem;
-    color: var(--color-blue-400);
-    font-weight: 700;
+:root{
+    --font-size-large: 1.8rem;
+    --font-size-normal: 1.6rem;
+
+    --line-height-large: 2.8rem;
 }
 
 .font-height-larger{
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-}
-
-.subtitle{
-    @extend .font-height-larger;    
-    color: var(--color-neutral-400);
-    font-weight: 500;
+    font-size: var(--font-size-large);
+    line-height: var(--line-height-large);
 }
