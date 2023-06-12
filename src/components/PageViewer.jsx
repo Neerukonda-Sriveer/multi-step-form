@@ -25,7 +25,7 @@ const PageViewer = forwardRef(({pageNumber},ref) => {
         emailId: '',
         phoneNumber: '',
         planType: '',
-        monthly: false
+        yearly: true
     });
 
     const personalInfoRef = useRef();

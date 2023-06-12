@@ -6,19 +6,20 @@ import AdvancedImg from '../../images/icon-advanced.svg';
 import ProImg from '../../images/icon-pro.svg';
 
 export default function PlanSelectorWidget({
-    isMonthly
+    isMonthly,setSelectedPlan
 }){
     return(
         <div className={`${Classes['plan-selector-widget']}`}>
             <PlanSelectorRadioButton 
                 name='planSelectorWidget'
-                value='Arcade'
+                value='arcade'
                 imgSrc={ArcadeImg}
                 imgAlt='arcade membership icon'
                 planName='arcade'
                 planCostMonthly='$9/mo'
                 planCostYearly='$90/yr'
                 isMonthly={isMonthly}
+                onChange={(event) => setSelectedPlan(event.target.value)}
             />
             <PlanSelectorRadioButton 
                 name='planSelectorWidget'
@@ -29,6 +30,7 @@ export default function PlanSelectorWidget({
                 planCostMonthly='$12/mo'
                 planCostYearly='$120/yr'
                 isMonthly={isMonthly}
+                onChange={(event) => setSelectedPlan(event.target.value)}
             />
             <PlanSelectorRadioButton 
                 name='planSelectorWidget'
@@ -39,6 +41,7 @@ export default function PlanSelectorWidget({
                 planCostMonthly='$15/mo'
                 planCostYearly='$150/yr'
                 isMonthly={isMonthly}
+                onChange={(event) => setSelectedPlan(event.target.value)}
             />
         </div>
         

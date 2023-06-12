@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle, useState } from "react";
+import { forwardRef, useImperativeHandle } from "react";
 
 import PageHeading from "../ui/PageHeading";
 import Switch from '../ui/Switch';
@@ -23,10 +23,18 @@ const PlanSelector = forwardRef(({className,formData,setFormData},ref) => {
         }
     });
 
-    const [yearly,setYearly] = useState(false);
     function setIsYearly(bValue){
-        console.log(bValue);
-        setYearly(bValue);
+        setFormData({
+            ...formData,
+            yearly: bValue
+        });
+    }
+
+    function setPlanType(sPlanType){
+        setFormData({
+            ...formData,
+            planType: sPlanType
+        });
     }
 
     return(
@@ -37,12 +45,13 @@ const PlanSelector = forwardRef(({className,formData,setFormData},ref) => {
             />
             <div className="spacer-5-vertical-desktop spacer-3-vertical-mobile">
                 <PlanSelectorWidget
-                    isMonthly={!yearly}
+                    isMonthly={!formData.yearly}
+                    setSelectedPlan={setPlanType}
                 />
                 <Switch 
                     labelOne='Monthly'
                     labelTwo='Yearly'
-                    checkedStateVariable={yearly}
+                    checkedStateVariable={formData.yearly}
                     onChange={setIsYearly}
                 />
             </div>
