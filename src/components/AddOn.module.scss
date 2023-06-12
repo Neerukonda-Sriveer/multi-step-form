@@ -1,0 +1,116 @@
+@import '../scss/abstract';
+
+.label{
+    cursor: pointer;
+}
+
+.input{
+    display: none;
+}
+
+.display-box{
+    display: flex;
+    align-items: center;
+    
+    border: 1px solid var(--color-neutral-400);
+    border-radius: var(--border-radius);
+
+    column-gap: var(--spacing-5);
+    padding: var(--spacing-5);
+
+    @include for-mobile{
+        column-gap: var(--spacing-2);
+        padding: var(--spacing-2);
+    }
+}
+
+.display-box:hover{
+    border: 1px solid var(--color-blue-300);
+}
+
+.input:checked + .display-box{
+    background-color: var(--color-neutral-300);
+}
+
+.checkbox{
+    transition: background-color .1s ease-in;
+    
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: .5rem;
+
+    @include for-mobile{
+        width: 2rem;
+        height: 2rem;
+        padding: .4rem;
+    }
+
+    aspect-ratio: 1/1;
+    
+    border: 1px solid var(--color-neutral-400);
+    border-radius: var(--border-radius);
+
+    @include for-mobile{
+        border-radius: .5rem;
+    }
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-origin: content-box;
+    background-color: transparent;
+    background-image: url('../images/icon-checkmark.svg');
+}
+
+.input:checked + .display-box .checkbox{
+    background-color: var(--color-blue-300);
+}
+
+.text-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: var(--spacing-1);
+
+    width: 100%;
+}
+
+.text-description-box{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-1);
+
+    @include for-mobile{
+        row-gap: 0px;
+    }
+}
+
+.name{
+    color: var(--color-blue-400);
+    font-size: 1.8rem;
+    font-weight: 600;
+
+    @include for-mobile{
+        font-size: 1.5rem;
+    }
+}
+
+.description{
+    color: var(--color-neutral-500);
+    font-size: 1.6rem;
+    font-weight: 500;
+
+    @include for-mobile{
+        font-size: 1.4rem;
+    }
+}
+
+.cost{
+    color: var(--color-blue-300);
+    font-weight: 400;
+    font-size: 1.8rem;
+
+    @include for-mobile{
+        font-size: 1.5rem;
+    }
+}

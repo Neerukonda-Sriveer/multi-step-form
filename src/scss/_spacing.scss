@@ -15,6 +15,12 @@
         row-gap: var(--spacing-1);
     }
 
+    .spacer-2-vertical-desktop{
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-2);
+    }
+
     .spacer-3-vertical-desktop{
         display: flex;
         flex-direction: column;

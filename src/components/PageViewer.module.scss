@@ -35,6 +35,10 @@
 
         padding: var(--spacing-5);
     }
+
+    @include for-desktop{
+        padding-top: 5rem;
+    }
 }
 
 .hidden{
