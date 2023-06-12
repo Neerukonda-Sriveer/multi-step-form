@@ -5,4 +5,39 @@
     --spacing-4: 2.4rem;
     --spacing-5: 3.2rem;
     --spacing-6: 4.8rem;
+    --spacing-7: 6.4rem;
+}
+
+@include for-desktop{
+    .spacer-1-vertical-desktop{
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-1);
+    }
+
+    .spacer-3-vertical-desktop{
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-3);
+    }
+
+    .spacer-4-vertical-desktop{
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-4);
+    }
+
+    .spacer-5-vertical-desktop{
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-5);
+    }
+}
+
+@include for-mobile{
+    .spacer-3-vertical-mobile{
+        display: flex;
+        flex-direction: column;
+        row-gap: var(--spacing-3);
+    }
 }

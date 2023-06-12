@@ -1,0 +1,70 @@
+@import '../../scss/abstract';
+
+.display-wrapper{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-5);
+
+    padding: var(--spacing-3);
+    padding-right: var(--spacing-7);
+
+    border: 1px solid var(--color-neutral-500);
+    border-radius: var(--border-radius);
+
+    width: 18.5rem;
+
+    cursor: pointer;
+
+    @include for-mobile{
+        flex-direction: row;
+        width: 100%;
+        column-gap: var(--spacing-3);
+    }
+}
+
+.display-wrapper:hover,
+.input:focus + .display-wrapper{
+    border: 1px solid var(--color-blue-300);
+}
+
+input:checked + .display-wrapper{
+    border: 1px solid var(--color-blue-300);
+    background-color: var(--color-neutral-400);
+}
+
+.input{
+    display: none;
+}
+
+.img{
+    max-width: 4.8rem;
+    aspect-ratio: 1/1;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-1);
+}
+
+.plan-name{
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    font-weight: 600;
+    color: var(--color-blue-400);
+}
+
+.plan-cost{
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    color: var(--color-neutral-500);
+}   
+
+.plan-discount{
+    font-size: 1.4rem;
+    text-transform: capitalize;
+    font-weight: 400;
+    color: var(--color-blue-400);
+}
+

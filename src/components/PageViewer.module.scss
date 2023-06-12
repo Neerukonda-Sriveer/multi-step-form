@@ -14,6 +14,7 @@
     left: 0;
     top: 0;
     width: 100%;
+    max-width: 60rem;
     height: 100%;
 
     transition: opacity var(--page-transition-speed) ease-in-out;
@@ -25,6 +26,7 @@
         transform: translateX(-50%);
         
         width: min(35rem,90%);
+        max-width: initial;
         height: auto;
         
         background-color: var(--color-neutral-100);

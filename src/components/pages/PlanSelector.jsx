@@ -1,5 +1,8 @@
 import { forwardRef, useImperativeHandle, useState } from "react";
+
+import PageHeading from "../ui/PageHeading";
 import Switch from '../ui/Switch';
+import PlanSelectorWidget from "../PlanSelectorWidget/PlanSelectorWidget";
 
 const PlanSelector = forwardRef(({className,formData,setFormData},ref) => {
     
@@ -28,30 +31,21 @@ const PlanSelector = forwardRef(({className,formData,setFormData},ref) => {
 
     return(
         <div className={className}>
-            <h1>PlanSelector</h1>
-
-            {/* <div className="plan-type">
-                <h2>select plan type</h2>
-                <label>
-                    Arcade
-                    <input type="radio" value="Arcade" name="plan type" />
-                </label>
-                <label>
-                    Advanced
-                    <input type="radio" value="Advanced" name="plan type" />
-                </label>
-                <label>
-                    Pro
-                    <input type="radio" value="Pro" name="plan type" />
-                </label>    
-            </div> */}
-
-            <Switch 
-                labelOne='Monthly'
-                labelTwo='Yearly'
-                checkedStateVariable={yearly}
-                onChange={setIsYearly}
+            <PageHeading 
+                headingText="Plan Selector"
+                subtitleText="You have the option of monthly or yearly billing."
             />
+            <div className="spacer-5-vertical-desktop spacer-3-vertical-mobile">
+                <PlanSelectorWidget
+                    isMonthly={!yearly}
+                />
+                <Switch 
+                    labelOne='Monthly'
+                    labelTwo='Yearly'
+                    checkedStateVariable={yearly}
+                    onChange={setIsYearly}
+                />
+            </div>
         </div>
     );
 })

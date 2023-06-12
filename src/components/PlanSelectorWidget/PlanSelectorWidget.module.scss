@@ -1,0 +1,11 @@
+@import '../../scss/abstract';
+
+.plan-selector-widget{
+    display: flex;
+    justify-content: space-between;
+
+    @include for-mobile{
+        flex-direction: column;
+        row-gap: var(--spacing-2);
+    }
+}
