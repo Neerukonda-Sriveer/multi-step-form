@@ -5,6 +5,8 @@
     column-gap: var(--spacing-4);
     padding: var(--spacing-3);
     background-color: var(--color-neutral-300);
+
+    cursor: pointer;
 }
 .input{
     display: none;

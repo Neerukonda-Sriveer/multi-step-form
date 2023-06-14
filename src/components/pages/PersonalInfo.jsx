@@ -2,8 +2,6 @@ import { forwardRef, useImperativeHandle, useState } from "react";
 import Input from '../ui/Input';
 import PageHeading from "../ui/PageHeading";
 
-import Classes from './Pages.module.scss';
-
 const PersonalInfo = forwardRef(({className,formData,setFormData},ref) => {
     
     const [nameErrorText,setNameErrorText] = useState('Please enter a valid name');
@@ -43,7 +41,7 @@ const PersonalInfo = forwardRef(({className,formData,setFormData},ref) => {
                 headingText="Personal Info"
                 subtitleText="Please provide your name, email adress and phone number."
             />
-            <div className={Classes['input-box']}>
+            <div className="spacer-5-vertical-desktop spacer-3-vertical-mobile">
                 <Input 
                     labelText='Name'
                     placeholderText='e.g. Stephen King'
@@ -54,7 +52,7 @@ const PersonalInfo = forwardRef(({className,formData,setFormData},ref) => {
                 />
                 <Input 
                     labelText='Email Address'
-                    placeholderText='e.g. StephenKing@lorem.com'
+                    placeholderText='e.g. Stephenking@lorem.com'
                     errorText={emailErrorText}
                     inErrorState={emailErrorState}
                     value={formData.emailId} 
