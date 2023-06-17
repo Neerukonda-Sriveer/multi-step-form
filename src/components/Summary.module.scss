@@ -34,6 +34,10 @@
 .link{
     font-size: 1.4rem;
     color: var(--color-neutral-500);
+    background-color: transparent;
+    text-decoration: underline;
+    border: none;
+    cursor: pointer;
 }
 
 .planType-addOns-box{

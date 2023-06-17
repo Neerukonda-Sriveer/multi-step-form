@@ -7,7 +7,7 @@ import PickAddOns from './pages/PickAddOns'; //page 3
 import FinishingUp from './pages/FinishingUp'; //page 4
 import ThankYou from './pages/ThankYou'; //page 5
 
-const PageViewer = forwardRef(({pageNumber},ref) => {
+const PageViewer = forwardRef(({pageNumber,setPageNumber},ref) => {
 
     function validateCurrentPage(){
         switch(pageNumber){
@@ -60,7 +60,7 @@ const PageViewer = forwardRef(({pageNumber},ref) => {
             <FinishingUp
                 ref={finishingUpRef}
                 className={`${Classes['page']} ${(pageNumber===4)?Classes['visible']:Classes['hidden']}`} 
-                formData={formData} setFormData={setFormData}
+                formData={formData} setFormData={setFormData} setPageNumber={setPageNumber}
             />
             <ThankYou className={`${Classes['page']} ${(pageNumber===5)?Classes['visible']:Classes['hidden']}`} />
         </div>

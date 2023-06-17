@@ -19,7 +19,7 @@ export default function App(){
         <div className={`${Classes['app-container']}`}>
             <PageSelector pageNumber={pageNumber} setPageNumber={setPageNumber} pageViewerRef={pageViewerRef} numberOfStepsVisited={numberOfStepsVisited} />
             <div className={`${Classes['desktop-right-grouper']}`}>
-                <PageViewer pageNumber={pageNumber} ref={pageViewerRef} />
+                <PageViewer pageNumber={pageNumber} ref={pageViewerRef} setPageNumber={setPageNumber}/>
                 <PageAdvancer pageNumber={pageNumber} setPageNumber={setPageNumber} pageViewerRef={pageViewerRef} />
             </div>
         </div>

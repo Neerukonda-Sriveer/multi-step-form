@@ -2,8 +2,8 @@ import Classes from './Summary.module.scss';
 import planTypes from '../PlanTypes.js';
 import addOns from '../addOns.js';
 
-export default function Summary({formData}){
-
+export default function Summary({formData,setPageNumber}){
+    
     if(!formData.planType)
         return <h1>if no planType is selected; dont allow the user into summary</h1>
 
@@ -20,7 +20,7 @@ export default function Summary({formData}){
                 <div className={`${Classes['planType-summary-box']} ${(formData.addOns.length === 0)?Classes['mb-0']:''}`}>
                     <div className={`${Classes['text-box']}`}>
                         <h2 className={`${Classes['planType-heading']}`}>{formData.planType} ({planCostKey})</h2>
-                        <a className={`${Classes['link']}`} href='https://www.google.com'>Change</a>
+                        <button onClick={() => setPageNumber(2)} className={`${Classes['link']}`}>Change</button>
                     </div>
                     <h2 className={`${Classes['planType-cost']}`}>${planTypes[formData.planType][planCostKey]}/{planCostAbbreviation}</h2>
                 </div>

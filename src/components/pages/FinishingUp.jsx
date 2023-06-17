@@ -3,7 +3,7 @@ import { forwardRef, useImperativeHandle } from "react";
 import PageHeading from '../ui/PageHeading';
 import Summary from "../Summary";
 
-const FinishingUp = forwardRef(({className,formData,setFormData},ref) => {
+const FinishingUp = forwardRef(({className,formData,setFormData,setPageNumber},ref) => {
     
     function validateInput(){
         return true;
@@ -23,6 +23,7 @@ const FinishingUp = forwardRef(({className,formData,setFormData},ref) => {
             />
             <Summary 
                 formData={formData}
+                setPageNumber={setPageNumber}
             />
         </div>
     )
