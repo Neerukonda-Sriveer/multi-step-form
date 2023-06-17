@@ -17,15 +17,15 @@ export default function Summary({formData}){
     return(
         <div className={`${Classes['wrapper']}`}>
             <div className={`${Classes['summary']}`}>
-                <div className={`${Classes['planType-summary-box']}`}>
+                <div className={`${Classes['planType-summary-box']} ${(formData.addOns.length === 0)?Classes['mb-0']:''}`}>
                     <div className={`${Classes['text-box']}`}>
                         <h2 className={`${Classes['planType-heading']}`}>{formData.planType} ({planCostKey})</h2>
                         <a className={`${Classes['link']}`} href='https://www.google.com'>Change</a>
                     </div>
                     <h2 className={`${Classes['planType-cost']}`}>${planTypes[formData.planType][planCostKey]}/{planCostAbbreviation}</h2>
                 </div>
-                <hr />
-                <div className={`${Classes['planType-addOns-box']} ${()}`}>
+                <hr className={`${(formData.addOns.length === 0)?Classes['hidden']:''}`}/>
+                <div className={`${Classes['planType-addOns-box']} ${(formData.addOns.length === 0)?Classes['hidden']:''}`}>
                     {formData.addOns.map((addOn,index) => <h2 key={`ste-${index}`} className={`${Classes['add-on-entry']}`}>
                         <span className={`${Classes['add-on-entry__heading']}`}>{addOn}</span>
                         <span className={`${Classes['add-on-entry__price']}`}>+${addOns.find((item) => item.name === addOn)[planCostKey]}/{planCostAbbreviation}</span>
