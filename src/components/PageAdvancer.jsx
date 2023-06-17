@@ -8,8 +8,9 @@ export default function PageAdvancer({
 }){
 
     function toNextPage(){
-        //no checks are being performed as this function should not be called if the operation cannot be performed..
-        pageViewerRef.current.validateCurrentPage();
+        //this function cannot be called if the next button is hidden; try to hide it instead of doing too much validation here
+        if(pageViewerRef.current.validateCurrentPage() === false)
+            return;
         setPageNumber(pageNumber+1);
     }
 

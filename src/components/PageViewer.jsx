@@ -10,7 +10,13 @@ import ThankYou from './pages/ThankYou'; //page 5
 const PageViewer = forwardRef(({pageNumber},ref) => {
 
     function validateCurrentPage(){
-        console.log('page viewer validate called!');
+        switch(pageNumber){
+            case 1: return personalInfoRef.current.validateInput();
+            case 2: return planSelectorRef.current.validateInput();
+            case 3: return pickAddOnsRef.current.validateInput();
+            case 4: return finishingUpRef.current.validateInput();
+            default: console.log('we should not be here');
+        }
         return false;
     }
 

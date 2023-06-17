@@ -3,10 +3,26 @@ import RadioButton from './ui/RadioButton';
 
 export default function PageSelector({
     pageNumber,
-    setPageNumber
+    setPageNumber,
+    pageViewerRef,
+    numberOfStepsVisited
 }){
 
     function setPage(number){
+        //do not allow using this function if we are in thank you page
+        if(pageNumber === 5)
+            return;
+
+        //going back requires no validation
+        if(number < pageNumber){
+            setPageNumber(number);
+            return;
+        }
+
+        //you can only go as front as you have already been using the advancer
+        if(pageViewerRef.current.validateCurrentPage() === false || number > numberOfStepsVisited)
+            return;
+        
         setPageNumber(number);
     }
 

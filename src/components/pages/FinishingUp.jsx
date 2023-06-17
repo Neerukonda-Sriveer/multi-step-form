@@ -5,13 +5,13 @@ import Summary from "../Summary";
 
 const FinishingUp = forwardRef(({className,formData,setFormData},ref) => {
     
-    function ValidateInput(){
+    function validateInput(){
         return true;
     }
     
     useImperativeHandle(ref,() => {
         return {
-            ValidateInput
+            validateInput
         }
     });
 

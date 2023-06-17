@@ -16,15 +16,56 @@ const PersonalInfo = forwardRef(({className,formData,setFormData},ref) => {
     //this function returns false and adds in all the little red messages on the inputs if the page is not completely filled; returns true if page is completely filled.
     function validateInput(){
         let flag =true;
+
+        //see if name is valid
         if(!formData.name){
             flag = false;
+            setNameErrorState(true);
+            setNameErrorText('Name required')
         }
+        else if(!formData.name.match(/^[A-Za-z]+((\s)?([A-Za-z])+)*$/)){
+            flag = false;
+            setNameErrorState(true);
+            setNameErrorText('Letters and spaces only')
+        }
+        else{
+            setNameErrorState(false);
+            setNameErrorText('');
+        }
+
+
         if(!formData.emailId){
             flag = false;
+            setEmailErrorState(true);
+            setEmailErrorText('Email required')
         }
+        else if(!formData.emailId.match(/^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/)){
+            flag = false;
+            setEmailErrorState(true);
+            setEmailErrorText('Email invalid')
+        }
+        else{
+            setEmailErrorState(false);
+            setEmailErrorText('');
+        }
+
+
         if(!formData.phoneNumber){
             flag = false;
+            setPhoneNumberErrorState(true);
+            setPhoneNumberErrorText('Phone Required')
         }
+        else if(!formData.phoneNumber.match(/^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/))
+        {
+            flag = false;
+            setPhoneNumberErrorState(true);
+            setPhoneNumberErrorText('Number Invalid')
+        }
+        else{
+            setPhoneNumberErrorState(false);
+            setPhoneNumberErrorText('')
+        }
+
         return flag;
     }
 
