@@ -1,0 +1,79 @@
+.wrapper{
+    --padding-horizontal: var(--spacing-2);
+    --spacing-vertical: var(--spacing-3);
+}
+
+.summary{
+    background-color: var(--color-neutral-300);
+    padding: var(--spacing-vertical) var(--spacing-2);
+    border-radius: var(--border-radius);
+}
+
+.planType-summary-box{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: var(--spacing-vertical);
+}
+
+.planType-heading{
+    font-size: 1.6rem;
+    color: var(--color-blue-400);
+    text-transform: capitalize;
+    letter-spacing: -.03rem;
+}
+
+.planType-cost{
+    font-size: 1.8rem;
+    color: var(--color-blue-400);
+}
+
+.link{
+    font-size: 1.4rem;
+    color: var(--color-neutral-500);
+}
+
+.planType-addOns-box{
+    margin-top: var(--spacing-vertical);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: var(--spacing-vertical)
+}
+
+.add-on-entry{
+    display: flex;
+    justify-content: space-between;
+}
+
+.add-on-entry__heading{
+    font-size: 1.6rem;
+    color: var(--color-neutral-500);
+    font-weight: 500;
+}
+
+.add-on-entry__price{
+    font-size: 1.6rem;
+    color: var(--color-blue-400);
+    font-weight: 500;
+}
+
+.total{
+    padding: 0 var(--padding-horizontal);
+    margin-top: var(--spacing-5);
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.total-heading{
+    font-size: 1.6rem;
+    color: var(--color-neutral-500);
+    font-weight: 500;
+}
+
+.total-amount{
+    font-size: 2.2rem;
+    color: var(--color-blue-300);
+}

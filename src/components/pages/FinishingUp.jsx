@@ -1,6 +1,9 @@
 import { forwardRef, useImperativeHandle } from "react";
 
-const FinishingUp = forwardRef(({className},ref) => {
+import PageHeading from '../ui/PageHeading';
+import Summary from "../Summary";
+
+const FinishingUp = forwardRef(({className,formData,setFormData},ref) => {
     
     function ValidateInput(){
         return true;
@@ -14,7 +17,13 @@ const FinishingUp = forwardRef(({className},ref) => {
 
     return(
         <div className={className}>
-            <h1>FinishingUp</h1>
+            <PageHeading 
+                headingText='Finishing Up'
+                subtitleText='Double-check everything looks OK before confirming.'
+            />
+            <Summary 
+                formData={formData}
+            />
         </div>
     )
 });
