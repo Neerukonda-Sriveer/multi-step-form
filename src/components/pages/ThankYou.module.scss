@@ -1,0 +1,32 @@
+@import '../../scss/abstract';
+
+.page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    row-gap: var(--spacing-5);
+
+    @include for-desktop{
+        margin-top: -2rem;
+    }
+}
+
+.img{
+    width: 100%;
+    max-width: 9rem;
+    aspect-ratio: 1/1;
+}
+
+.heading{
+    font-size: 4rem;
+    color: var(--color-blue-400);
+    font-weight: 700;
+}
+
+.paragraph{
+    font-size: 1.8rem;
+    color: var(--color-neutral-500);
+    text-align: center;
+}
