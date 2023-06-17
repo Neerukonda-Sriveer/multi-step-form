@@ -6,7 +6,12 @@
 }
 
 .ghost{
+    transition: color ease-in-out var(--page-transition-speed);
     color: var(--color-neutral-500);
+}
+
+.ghost:hover{
+    color: var(--color-blue-400);
 }
 
 .primary{
